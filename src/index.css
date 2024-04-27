@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+// App.js
+
+import React,
+{
+useState,
+useEffect
+}
+
+from "react";
+import axios from "axios";
+
+const App=()=> {
+    const [movies,
+    setMovies]=useState([]);
+    const [filteredMovies,
+    setFilteredMovies]=useState([]);
+
+    const [filters,
+    setFilters]=useState({
+        language: "",
+        country: "",
+        genre: "",
+    });
+const [languages,
+setLanguages]=useState([]);
+const [countries,
+setCountries]=useState([]);
+const [genres,
+setGenres]=useState([]);
+
+useEffect(()=> {
+
+        // Fetch movies data from JSON or API
+        axios.get("movies.json").then((response)=> {
+                setMovies(response.data);
+                setFilteredMovies(response.data);
+
+                // Extract unique languages, countries, and genres
+                const uniqueLanguages=[...new Set(response.data.flatMap(movie=> movie.movielanguages))];
+                setLanguages(uniqueLanguages);
+
+                const uniqueCountries=[...new Set(response.data.flatMap(movie=> movie.moviecountries))];
+                setCountries(uniqueCountries);
+
+                const uniqueGenres=[...new Set(response.data.flatMap(movie=> movie.moviegenres))];
+                setGenres(uniqueGenres);
+            });
+    }
+
+    , []);
+
+const handleFilterChange=(event)=> {
+    const {
+        name,
+        value
+    }
+
+    =event.target;
+
+    setFilters({
+        ...filters, [name]: value
+    });
+}
+
+;
+
+useEffect(()=> {
+        // Apply filters
+        let filtered=movies;
+
+        if (filters.language) {
+            filtered=filtered.filter((movie)=> movie.movielanguages.includes(filters.language));
+        }
+
+        if (filters.country) {
+            filtered=filtered.filter((movie)=> movie.moviecountries.includes(filters.country));
+        }
+
+        if (filters.genre) {
+            filtered=filtered.filter((movie)=> movie.moviegenres.includes(filters.genre));
+        }
+
+        setFilteredMovies(filtered);
+    }
+
+    , [filters, movies]);
+
+return (<div className="container mx-auto p-4" > <h1 className="text-3xl font-bold mb-4" >Movie Catalog</h1> <div className="flex flex-wrap gap-4 mb-4" > <select name="language"
+    className="border rounded-md p-2"
+
+    onChange= {
+        handleFilterChange
+    }
+
+    > <option value="" >Select Language</option> {
+        languages.map((lang)=> (<option key= {
+                    lang
+                }
+
+                value= {
+                    lang
+                }
+
+                > {
+                    lang
+                }
+
+                </option>))
+    }
+
+    </select> <select name="country"
+    className="border rounded-md p-2"
+
+    onChange= {
+        handleFilterChange
+    }
+
+    > <option value="" >Select Country</option> {
+        countries.map((country)=> (<option key= {
+                    country
+                }
+
+                value= {
+                    country
+                }
+
+                > {
+                    country
+                }
+
+                </option>))
+    }
+
+    </select> <select name="genre"
+    className="border rounded-md p-2"
+
+    onChange= {
+        handleFilterChange
+    }
+
+    > <option value="" >Select Genre</option> {
+        genres.map((genre)=> (<option key= {
+                    genre
+                }
+
+                value= {
+                    genre
+                }
+
+                > {
+                    genre
+                }
+
+                </option>))
+    }
+
+    </select> </div> <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" > {
+        filteredMovies.map((movie)=> (<div key= {
+                    movie.imdbmovieid
+                }
+
+                className="border p-4 rounded-md" > <img src= {
+                    movie.moviemainphotos[0]
+                }
+
+                alt= {
+                    movie.movietitle
+                }
+
+                className="mb-2" /> <h2 className="text-xl font-bold mb-1" > {
+                    movie.movietitle
+                }
+
+                </h2> <p>Languages: {
+                    movie.movielanguages.join(", ")
+                }
+
+                </p> <p>Countries: {
+                    movie.moviecountries.join(", ")
+                }
+
+                </p> <p>Genres: {
+                    movie.moviegenres.join(", ")
+                }
+
+                </p> </div>))
+    }
+
+    </div> </div>);
+}
+
+;
+
+export default App; */
